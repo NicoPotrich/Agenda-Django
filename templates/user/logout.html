@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <h2 class="mb-0">
+        Logout
+    </h2> 
+{% endblock title %}
+
+{% block styles %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+
+{% endblock styles %}
+
+{% block content %} 
+
+    <h4>
+        <p class="subheading mb-5">Se ha deslogueado exitosamente</p>
+    </h4>
+
+{% endblock content %} 

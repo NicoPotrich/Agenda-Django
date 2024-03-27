@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block title %} 
+<h2 class="mb-0">
+    Viaje
+    <span class="text-primary">{{ travel.title }}</span>
+</h2> 
+{% endblock title %}
+
+{% block content %} 
+    <ul class="list">
+        <hr class="line-table">
+        <li><b>Titulo:</b> {{ travel.title }} </li>
+        <hr class="line-table">
+        <li><b>Descripcion:</b> {{ travel.description }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de salida:</b> {{ travel.date_time }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de llegada estimada:</b> {{ travel.estimated_end }} </li>
+        <hr class="line-table">
+    </ul>
+    <span class="aux-btns"><a href="{% url 'travel' %}">Volver atras</a></span>
+{% endblock content %}

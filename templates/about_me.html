@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+
+{% block title %}
+
+<h2 class="mb-0">
+    Acerca 
+    <span class="text-primary">de mi</span>
+</h2> 
+
+{% endblock title %}
+
+{% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock styles %}
+
+{% block content %} 
+
+    <h4>¡Hola! Soy Nicolás Martin Potrich.</h4>
+    <p>
+        Durante más de 10 años, he trabajado en el sector de la construcción, desempeñando roles que van desde dirección de obra hasta tareas administrativas. 
+        Sin embargo, recientemente decidí explorar mi interés por la tecnología y me embarqué en una nueva aventura de aprendizaje.
+    </p>
+    <p>
+        En los últimos 6 meses, me he sumergido en el mundo de la programación y la ciencia de datos. He completado varios cursos en plataformas reconocidas 
+        como Coderhouse, donde he adquirido habilidades en Python, Django, HTML, CSS, JavaScript, Git y bases de datos SQL y NoSQL, entre otros.
+    </p>
+    <p>
+        Mi objetivo a corto plazo es iniciar mi carrera profesional en el campo de la ciencia de datos, donde pueda aplicar mis conocimientos y 
+        contribuir de manera significativa a proyectos innovadores.
+    </p>
+    <p>
+        Mi objetivo a corto plazo es iniciar mi carrera profesional en el campo de la ciencia de datos, donde pueda aplicar mis conocimientos y 
+        contribuir de manera significativa a proyectos innovadores.
+    </p>
+    <p>
+        A largo plazo, aspiro a seguir creciendo profesionalmente y trabajar en proyectos que impulsen la innovación y la eficiencia en el manejo de datos.    
+    </p>
+    <p>
+        Estoy emocionado por lo que depara el futuro y por las oportunidades que me permitirán seguir aprendiendo y creciendo en el mundo de la tecnología.
+    </p>
+    <p>
+        ¡Gracias por visitar mi perfil!
+    </p>
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}   
+        <div>
+            <input type="submit" class="btn btn-primary btn-block" value="Atras">
+        </div>
+    </form>
+{% endblock content %} 

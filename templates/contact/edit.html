@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block title %} 
+
+<h2 class="mb-0">
+    Editar
+    <span class="text-primary">Contacto</span>
+</h2> 
+
+{% endblock title %}
+
+{% block styles %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock styles %}
+
+{% block content %} 
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="alert-success"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <form action="{% url 'contact_edit' id=id %}" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div class="btn-wrapper">
+            <input type="submit" value="Guardar" class="btn btn-primary btn-block">
+        </div>
+    </form>
+    <form action="{% url 'contact' %}" method="POST">
+        {% csrf_token %}
+        <div class="btn-wrapper">
+            <input type="submit" value="Atras" class="btn btn-primary btn-block">
+        </div>
+    </form>
+{% endblock content %} 

@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+<h2 class="mb-0">
+    Eliminar
+    <span class="text-primary">Tarea</span>
+</h2>   
+{% endblock title %}
+
+
+{% block content %}
+
+    <form action="" method="POST">
+        {% csrf_token %}   
+        <div class="text-center">     
+            <h3>Esta seguro que quiere eliminar la siguiente tarea? <p style="color:red">{{ object }}</p> </h3>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Confirmar">
+        </div>
+    </form>
+    <form action="{% url 'task' %}" method="POST">
+        {% csrf_token %}   
+        <div class="text-center" >
+            <input type="submit" class="btn btn-primary btn-block" value="Cancelar">
+        </div>
+    </form>
+
+{% endblock content %}

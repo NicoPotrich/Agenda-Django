@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block title %} {% endblock title %}
+
+{% block content %} 
+
+    <h1>Reuniones</h1>
+
+    {% include 'meetings/partials/search.html' %}
+
+    <span class="aux-btns">
+        <a href="{% url 'meetings' %}">Ver todos</a> 
+        <a 
+            href="{% url 'meeting_create' %} " 
+            class="btn btn-primary" 
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+            ><i class="fa-solid fa-plus" title="Create Record"></i>
+        </a>
+    </span>
+        <ul class="list">
+            {% for meeting in meeting %}
+                <hr class="line-table">
+                    <li> {{ meeting }} 
+                        <span>
+                            <a
+                                href="{% url 'meeting_view' id=meeting.id %}"
+                                class="btn btn-primary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa-sharp fa-thin fa-newspaper" title="Detail Record"></i>
+                            </a>
+                            <a
+                                href="{% url 'meeting_edit' id=meeting.id %}"
+                                class="btn btn-primary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                            </a>
+                            <a
+                                href="{% url 'meeting_delete' meeting.id %}"
+                                class="btn btn-danger"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                            </a>
+                        </span>
+                    </li>
+                <hr class="line-table">
+            {% endfor %}
+        </ul>
+
+{% endblock content %} 

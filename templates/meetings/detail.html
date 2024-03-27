@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block title %} 
+
+<h2 class="mb-0">
+    Reunion
+    <span class="text-primary">{{ meeting.title }}</span>
+</h2> 
+
+{% endblock title %}
+
+{% block content %} 
+
+    <ul class="list">
+        <hr class="line-table">
+        <li><b>Titulo:</b> {{ meeting.title }} </li>
+        <hr class="line-table">
+        <li><b>Descripcion:</b> {{ meeting.description }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de creacion:</b> {{ meeting.date_time }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de finalizacion estimada:</b> {{ meeting.estimated_end }} </li>
+        <hr class="line-table">
+        <li><b>Prioridad(1...5):</b> {{ meeting.priority }} </li>
+        <hr class="line-table">
+    </ul>
+    <span class="aux-btns"><a href="{% url 'meetings' %}">Volver atras</a></span>
+
+{% endblock content %} 

@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+
+{% block title %}
+
+<h2 class="mb-0">
+    Contacto
+    <span class="text-primary">{{ contact.name }}</span>
+</h2> 
+
+{% endblock title %}
+
+{% block content %} 
+
+    <ul class="list">
+        <hr class="line-table">
+        <li><b>Nombre:</b>  {{ contact.name }} </li>
+        <hr class="line-table">
+        <li><b>Apellidos:</b>  {{ contact.last_name }} </li>
+        <hr class="line-table">
+        <li><b>Celular:</b>  {{ contact.mobile }} </li>
+        <hr class="line-table">
+        <li><b>Tel:</b>  {{ contact.phone }} </li>
+        <hr class="line-table">
+        <li><b>Email:</b>  {{ contact.email }} </li>
+        <hr class="line-table">
+        <li><b>Compania:</b>  {{ contact.company }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de alta:</b>  {{ contact.date }} </li>
+        <hr class="line-table">
+        <li><b>Notas:</b>  {{ contact.notes }} </li>
+        <hr class="line-table">
+    </ul>
+    <span class="aux-btns"><a href="{% url 'contact' %}">Volver atras</a></span>
+
+{% endblock content %} 

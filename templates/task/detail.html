@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block title %} 
+
+<h2 class="mb-0">
+    Tarea
+    <span class="text-primary">{{ task.name }} </span>
+</h2> 
+
+{% endblock title %}
+
+{% block content %} 
+
+    <ul class="list">
+        <hr class="line-table">
+        <li><b>Titulo:</b> {{ task.title }} </li>
+        <hr class="line-table">
+        <li><b>Descripcion:</b> {{ task.description }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de creacion:</b> {{ task.date }} </li>
+        <hr class="line-table">
+        <li><b>Fecha de finalizacion estimada:</b> {{ task.estimated_end }} </li>
+        <hr class="line-table">
+        <li><b>Prioridad(1...5):</b> {{ task.priority }} </li>
+        <hr class="line-table">
+    </ul>
+    <span class="aux-btns"><a href="{% url 'task' %}">Volver atras</a></span>
+
+{% endblock content %} 

@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <h2 class="mb-0">
+        Editar Perfil
+    </h2> 
+{% endblock title %}
+
+{% block styles %}
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+
+{% endblock styles %}
+
+{% block content %} 
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <div class="btn-wrapper">
+            <input type="submit" value="Guardar" class="btn btn-primary btn-block">
+        </div>
+    </form>
+    <form action="{% url 'index' %}" method="POST">
+        {% csrf_token %}   
+        <div>
+            <input type="submit" class="btn btn-primary btn-block" value="Atras">
+        </div>
+    </form>
+    <form action="{% url 'delete_user' user.id %}" method="POST">
+        {% csrf_token %}   
+        <div>
+            <input type="submit" class="btn btn-primary btn-block" background="red" value="Eliminar usuario">
+        </div>
+    </form>
+
+{% endblock content %} 
